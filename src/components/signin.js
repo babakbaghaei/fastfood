@@ -3,30 +3,64 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Component } from "react";
+import axios from "axios";
 
-const SignIn = () => {
-  const submit = (e) => {
-    e.preventDefault();
+class SignIn extends Component {
+  state = {
+    account: {
+      email: "",
+      password: "",
+    },
   };
-  const state = {};
-  return (
-    <>
-      <div className="container">
-        <form onSubmit={submit} className="form-container">
-          <h3 className="brand-colored brand-colored">
-            <FontAwesomeIcon
-              style={{ marginRight: "8px" }}
-              icon={faArrowRightToBracket}
+  submit = async (e) => {
+    e.preventDefault();
+    const response = await axios.post(
+      "https://reqres.in/api/login",
+      this.state.account
+    );
+    console.log(response);
+  };
+
+  handleChange = (event) => {
+    const target = event.currentTarget;
+    const account = { ...this.state.account };
+    account[target.name] = target.value;
+    this.setState({ account });
+  };
+
+  render() {
+    return (
+      <>
+        <div className="container">
+          <form onSubmit={this.submit} className="form-container">
+            <h3 className="brand-colored brand-colored">
+              <FontAwesomeIcon
+                style={{ marginRight: "8px" }}
+                icon={faArrowRightToBracket}
+              />
+              Sign In
+            </h3>
+            <Input
+              onChange={this.handleChange}
+              value={this.state.account.email}
+              name="email"
+              id="email"
+              icon={faUser}
             />
-            Sign In
-          </h3>
-          <Input name="Email" id="email" icon={faUser} />
-          <Input name="Password" id="password" icon={faKey} />
-          <button className="submit-btn buttons">Submit</button>
-        </form>
-      </div>
-    </>
-  );
-};
+            <Input
+              onChange={this.handleChange}
+              value={this.state.account.password}
+              name="password"
+              id="password"
+              icon={faKey}
+            />
+            <button className="submit-btn buttons">Submit</button>
+          </form>
+        </div>
+      </>
+    );
+  }
+}
 
 export default SignIn;

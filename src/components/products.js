@@ -3,7 +3,7 @@ import Product from "./product";
 import { useContext } from "react";
 import ProductContext from "./../context/product";
 
-const Products = ({}) => {
+const Products = () => {
   const productContext = useContext(ProductContext);
 
   return (
