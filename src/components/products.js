@@ -4,6 +4,7 @@ import { useContext } from "react";
 import ProductContext from "./../context/product";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const productContext = useContext(ProductContext);
@@ -36,7 +37,11 @@ const Products = () => {
             style={{ color: "chocolate" }}
             icon={faExclamationTriangle}
           />
-          <h3 style={{ margin: "0" }}>You have to login first!</h3>
+          <h3 style={{ margin: "0" }}>Restricted Access!</h3>
+          <p>You cannot add any food without signing in.</p>
+          <Link to="/SignIn">
+            <b>Sign In</b>
+          </Link>
         </div>
       </>
     );
