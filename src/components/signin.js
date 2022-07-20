@@ -33,33 +33,36 @@ class SignIn extends Component {
   render() {
     return (
       <>
-        <div className="container">
-          <form onSubmit={this.submit} className="form-container">
-            <h3 className="brand-colored brand-colored">
-              <FontAwesomeIcon
-                style={{ marginRight: "10px" }}
-                icon={faArrowRightToBracket}
+        <div className="centerize">
+          {" "}
+          <div className="container">
+            <form onSubmit={this.submit} className="form-container">
+              <h3 className="brand-colored brand-colored">
+                <FontAwesomeIcon
+                  style={{ marginRight: "10px" }}
+                  icon={faArrowRightToBracket}
+                />
+                Sign In
+              </h3>
+              <Input
+                onChange={this.handleChange}
+                placeholders="Email"
+                value={this.state.account.email}
+                name="email"
+                id="email"
+                icon={faUser}
               />
-              Sign In
-            </h3>
-            <Input
-              onChange={this.handleChange}
-              placeholders="Email"
-              value={this.state.account.email}
-              name="email"
-              id="email"
-              icon={faUser}
-            />
-            <Input
-              onChange={this.handleChange}
-              placeholders="Password"
-              value={this.state.account.password}
-              name="password"
-              id="password"
-              icon={faKey}
-            />
-            <button className="submit-btn buttons">Submit</button>
-          </form>
+              <Input
+                onChange={this.handleChange}
+                placeholders="Password"
+                value={this.state.account.password}
+                name="password"
+                id="password"
+                icon={faKey}
+              />
+              <button className="submit-btn buttons">Submit</button>
+            </form>
+          </div>
         </div>
       </>
     );

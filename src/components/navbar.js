@@ -6,18 +6,20 @@ const Navbar = () => {
   const productContext = useContext(ProductContext);
   return (
     <>
-      <div className="navbar">
-        <div className="links flex" style={{ alignItems: "center" }}>
-          <h2 className="brand-colored" style={{ marginRight: "10px" }}>
-            FastFood
-          </h2>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/Foods">Foods</NavLink>
-          <NavLink to="/SignIn">Sign In</NavLink>
-        </div>
-        <div className="flex">
-          <h3 className="selected-items">{calculateSum()}</h3>
-          <h3 className="items-selected">item is selected.</h3>
+      <div className="navbar-container">
+        <div className="navbar">
+          <div className="links flex" style={{ alignItems: "center" }}>
+            <h2 className="brand-colored" style={{ marginRight: "10px" }}>
+              FastFood
+            </h2>
+            <NavLink to="/FastFood">Home</NavLink>
+            <NavLink to="/Foods">Foods</NavLink>
+            <NavLink to="/SignIn">Sign In</NavLink>
+          </div>
+          <div className="flex">
+            <h3 className="selected-items">{calculateSum()}</h3>
+            <h3 className="items-selected">item is selected.</h3>
+          </div>
         </div>
       </div>
     </>

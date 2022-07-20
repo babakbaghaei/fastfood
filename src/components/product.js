@@ -16,19 +16,21 @@ const Product = ({
   return (
     <>
       <div className="product">
-        <a
-          onClick={() => productContext.onFilter(productName)}
-          href="#a"
-          className="productSort"
-        >
-          {productName}
-        </a>
-        <h3 className="productTitle">{productSort}</h3>
-        <p>{productDescribtion}</p>
-        <p>
-          <strong>{price}</strong>$ / each
-        </p>
-        {handleAvailableToShowBagList()}
+        <div className="productInfo">
+          <a
+            onClick={() => productContext.onFilter(productName)}
+            href="#a"
+            className="productSort"
+          >
+            {productName}
+          </a>
+          <h3 className="productTitle">{productSort}</h3>
+          <p>{productDescribtion}</p>
+          <p>
+            <strong>{price}</strong>$ / each
+          </p>
+          {handleAvailableToShowBagList()}
+        </div>
         <div className="flex-buttons">
           {handleAvailableToAdd()}
           {handleAvailableToDelete()}

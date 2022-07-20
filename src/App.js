@@ -41,7 +41,7 @@ const App = () => {
       id: 3,
       productName: "Drink",
       sort: "🥤 Coca Cola",
-      describtion: "we bring you the world's most popular drink.",
+      describtion: "we bring you the world's first popular drink.",
       price: 0.99,
       stock: 12,
       count: 0,
@@ -75,7 +75,7 @@ const App = () => {
         <Routes>
           <Route path="/Foods" element={<Products />}></Route>
           <Route path="/SignIn" element={<SignIn />}></Route>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/FastFood" element={<Home />}></Route>
         </Routes>
       </ProductContext.Provider>
     </>
