@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Input = ({ id, icon, name, value, onChange }) => {
+const Input = ({ id, icon, name, value, onChange, placeholders }) => {
   return (
     <>
       <div className="input-c">
         <input
           className="input"
-          placeholder={name}
+          placeholder={placeholders}
           id={id}
           name={name}
           type={id}

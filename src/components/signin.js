@@ -14,13 +14,13 @@ class SignIn extends Component {
     },
   };
   submit = async (e) => {
-    alert("Hello");
     e.preventDefault();
     const response = await axios.post(
       "https://reqres.in/api/login",
       this.state.account
     );
     console.log(response);
+    localStorage.setItem("token", response.data.token);
   };
 
   handleChange = (event) => {
@@ -44,6 +44,7 @@ class SignIn extends Component {
             </h3>
             <Input
               onChange={this.handleChange}
+              placeholders="Email"
               value={this.state.account.email}
               name="email"
               id="email"
@@ -51,6 +52,7 @@ class SignIn extends Component {
             />
             <Input
               onChange={this.handleChange}
+              placeholders="Password"
               value={this.state.account.password}
               name="password"
               id="password"

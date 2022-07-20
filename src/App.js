@@ -2,7 +2,6 @@ import Products from "./components/products";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
 import SignIn from "./components/signin";
-import SignUp from "./components/signup";
 import React from "react";
 import { useState } from "react";
 import ProductContext from "./context/product";
@@ -75,7 +74,6 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/Foods" element={<Products />}></Route>
-          <Route path="/SignUp" element={<SignUp />}></Route>
           <Route path="/SignIn" element={<SignIn />}></Route>
           <Route path="/" element={<Home />}></Route>
         </Routes>
