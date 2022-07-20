@@ -40,7 +40,7 @@ const Products = () => {
           <h3 style={{ margin: "0" }}>Restricted Access!</h3>
           <p>You cannot add any food without signing in.</p>
           <Link to="/SignIn">
-            <b>Sign In</b>
+            <b>> Sign In</b>
           </Link>
         </div>
       </>
