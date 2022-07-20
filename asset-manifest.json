@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/babakbaghaei/fastfood/static/css/main.1cc7b122.css",
+    "main.js": "/babakbaghaei/fastfood/static/js/main.8e6ff4b0.js",
+    "index.html": "/babakbaghaei/fastfood/index.html",
+    "main.1cc7b122.css.map": "/babakbaghaei/fastfood/static/css/main.1cc7b122.css.map",
+    "main.8e6ff4b0.js.map": "/babakbaghaei/fastfood/static/js/main.8e6ff4b0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1cc7b122.css",
+    "static/js/main.8e6ff4b0.js"
+  ]
+}
