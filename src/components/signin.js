@@ -36,7 +36,7 @@ class SignIn extends Component {
           <form onSubmit={this.submit} className="form-container">
             <h3 className="brand-colored brand-colored">
               <FontAwesomeIcon
-                style={{ marginRight: "8px" }}
+                style={{ marginRight: "10px" }}
                 icon={faArrowRightToBracket}
               />
               Sign In
