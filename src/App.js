@@ -6,7 +6,7 @@ import Footer from "./components/footer";
 import React from "react";
 import { useState } from "react";
 import ProductContext from "./context/product";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Chefs from "./components/chefs";
 
 const App = () => {
@@ -82,7 +82,8 @@ const App = () => {
               <Route path="/chefs" element={<Chefs />} />
               <Route path="/foods" element={<Products />}></Route>
               <Route path="/users/signin" element={<SignIn />}></Route>
-              <Route path="/fastdood" element={<Home />}></Route>
+              <Route path="/" element={<Home />}></Route>
+              <Navigate to="https://babakbaghaei.github.io/fastfood/" />
             </Routes>
           </div>
           <Footer />
