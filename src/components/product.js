@@ -57,7 +57,7 @@ const Product = ({
     if (stock > 0 && stock > count) {
       return (
         <button className={"ad-btn"} onClick={addAndCalculate.bind()}>
-          + <strong>Add</strong>
+          + <strong>Add to card</strong>
         </button>
       );
     } else {
@@ -94,12 +94,12 @@ const Product = ({
       return (
         <h5 className="productdescription">
           <input
+            name={count}
             className="countinput"
-            onChange={productContext.onAddToBag}
-            type="text"
+            type="number"
             value={count}
-          />{" "}
-          in your shopping cart.
+            onChange={(e) => productContext.onCountChange(e, id)}
+          />
         </h5>
       );
     } else {

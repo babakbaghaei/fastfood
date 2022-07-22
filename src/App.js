@@ -2,10 +2,12 @@ import Products from "./components/products";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
 import SignIn from "./components/signin";
+import Footer from "./components/footer";
 import React from "react";
 import { useState } from "react";
 import ProductContext from "./context/product";
 import { Route, Routes } from "react-router-dom";
+import Chefs from "./components/chefs";
 
 const App = () => {
   const [products, setProduct] = useState([
@@ -69,19 +71,26 @@ const App = () => {
           onCalculatePrice: calculatePrice,
           onDecreasePrice: calculateLessPrice,
           onFilter: filteringBySort,
+          onReset: handleReset,
+          onCountChange: handleCountChange,
         }}
       >
-        <Navbar />
-        <Routes>
-          <Route path="/Foods" element={<Products />}></Route>
-          <Route path="/SignIn" element={<SignIn />}></Route>
-          <Route path="/FastFood" element={<Home />}></Route>
-        </Routes>
+        <div className="footer-flex">
+          <div>
+            <Navbar />
+            <Routes>
+              <Route path="./chefs" element={<Chefs />} />
+              <Route path="./foods" element={<Products />}></Route>
+              <Route path="./users/signin" element={<SignIn />}></Route>
+              <Route path="/fastdood" element={<Home />}></Route>
+            </Routes>
+          </div>
+          <Footer />
+        </div>
       </ProductContext.Provider>
     </>
   );
   function handleAddToBag(id) {
-    console.log(id);
     let newProducts = [...products];
     newProducts[id].count++;
     setProduct(newProducts);
@@ -92,9 +101,15 @@ const App = () => {
     setProduct(newProducts);
   }
   function handleDelete(id) {
-    let newProducts = [...products];
-    newProducts[id].count = 0;
-    setProduct(newProducts);
+    if (isNaN(id)) {
+      let newProducts = [...products];
+      newProducts.map((p) => (p.count = 0));
+      setProduct(newProducts);
+    } else {
+      let newProducts = [...products];
+      newProducts[id].count = 0;
+      setProduct(newProducts);
+    }
   }
   function calculatePrice(id) {
     let newProducts = [...products];
@@ -110,6 +125,20 @@ const App = () => {
     let newProducts = [...products];
     newProducts = newProducts.filter((p) => p.productName === sort);
     setProduct(newProducts);
+  }
+  function handleReset() {
+    let newProducts = [...products];
+    newProducts.count = 0;
+    setProduct(newProducts);
+  }
+  function handleCountChange(e, id) {
+    const input = e.currentTarget;
+    let newProducts = [...products];
+    if (input.value <= newProducts[id].stock) {
+      let integerInputValue = parseInt(input.value);
+      newProducts[id].count = integerInputValue;
+      setProduct(newProducts);
+    }
   }
 };
 
