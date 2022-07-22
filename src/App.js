@@ -83,7 +83,6 @@ const App = () => {
               <Route path="/foods" element={<Products />}></Route>
               <Route path="/users/signin" element={<SignIn />}></Route>
               <Route path="/fastfood" element={<Home />}></Route>
-              <Navigate to="https://babakbaghaei.github.io/fastfood/" />
             </Routes>
           </div>
           <Footer />
