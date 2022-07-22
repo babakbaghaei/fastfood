@@ -79,9 +79,9 @@ const App = () => {
           <div>
             <Navbar />
             <Routes>
-              <Route path="./chefs" element={<Chefs />} />
-              <Route path="./foods" element={<Products />}></Route>
-              <Route path="./users/signin" element={<SignIn />}></Route>
+              <Route path="/chefs" element={<Chefs />} />
+              <Route path="/foods" element={<Products />}></Route>
+              <Route path="/users/signin" element={<SignIn />}></Route>
               <Route path="/fastdood" element={<Home />}></Route>
             </Routes>
           </div>
