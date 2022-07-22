@@ -1,7 +1,7 @@
 {
   "name": "dooz",
   "version": "0.1.0",
-  "homepage": "https://babakbaghaei.github.io/",
+  "homepage": "https://babakbaghaei.github.io/fastfood",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
