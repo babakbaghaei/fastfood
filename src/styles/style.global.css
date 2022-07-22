@@ -9,6 +9,10 @@
   outline: 0px;
 }
 
+.ad-btn:disabled {
+  opacity: 0.5;
+}
+
 *::selection {
   background-color: chocolate;
   color: white;

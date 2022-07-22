@@ -6,7 +6,7 @@ import Footer from "./components/footer";
 import React from "react";
 import { useState } from "react";
 import ProductContext from "./context/product";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Chefs from "./components/chefs";
 
 const App = () => {

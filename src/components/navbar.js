@@ -38,11 +38,26 @@ const Navbar = () => {
         </div>
       );
     }
+    if (token === "QpwL5tke4Pnpja7X4") {
+      return (
+        <div className="flex">
+          <Link to={"/"}>
+            <button onClick={handleLogOut} className="ad-btn">
+              Log Out
+            </button>
+          </Link>
+        </div>
+      );
+    }
   }
   function showingAuthedLink() {
     if (token) {
       return <NavLink to="/chefs">Chefs</NavLink>;
     }
+  }
+  function handleLogOut() {
+    localStorage.removeItem("token");
+    window.location.reload();
   }
 };
 

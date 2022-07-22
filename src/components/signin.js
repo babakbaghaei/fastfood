@@ -11,13 +11,16 @@ import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [account, setAccount] = useState({});
+  const [buttonDisabling, setButtonDisabling] = useState(false);
   const navigate = useNavigate();
 
   async function submit(e) {
+    setButtonDisabling(true);
     e.preventDefault();
     const response = await axios.post("https://reqres.in/api/login", account);
     console.log(response);
     localStorage.setItem("token", response.data.token);
+    setButtonDisabling(false);
     navigate("/chefs");
     window.location.reload();
   }
@@ -58,7 +61,9 @@ const SignIn = () => {
               id="password"
               icon={faKey}
             />
-            <button className="submit-btn buttons">Submit</button>
+            <button disabled={buttonDisabling} className="submit-btn buttons">
+              Submit
+            </button>
             <p style={{ textAlign: "center" }}>
               login with <b>eve.holt@reqres.in</b> and any password.
             </p>
