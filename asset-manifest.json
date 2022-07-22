@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/fastfood/static/css/main.35ffe8a1.css",
-    "main.js": "/fastfood/static/js/main.cd256a5a.js",
+    "main.js": "/fastfood/static/js/main.bae2c7f4.js",
     "static/media/pizza.png": "/fastfood/static/media/pizza.1c8e2f4ab09297ef4b5d.png",
     "static/media/Brand.svg": "/fastfood/static/media/Brand.abcf2b01a884aec7440e253f804d0241.svg",
     "index.html": "/fastfood/index.html",
     "main.35ffe8a1.css.map": "/fastfood/static/css/main.35ffe8a1.css.map",
-    "main.cd256a5a.js.map": "/fastfood/static/js/main.cd256a5a.js.map"
+    "main.bae2c7f4.js.map": "/fastfood/static/js/main.bae2c7f4.js.map"
   },
   "entrypoints": [
     "static/css/main.35ffe8a1.css",
-    "static/js/main.cd256a5a.js"
+    "static/js/main.bae2c7f4.js"
   ]
 }
