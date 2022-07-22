@@ -7,6 +7,7 @@
   transition: 100ms;
   box-sizing: border-box;
   outline: 0px;
+  -webkit-appearance: none;
 }
 
 .ad-btn:disabled {
